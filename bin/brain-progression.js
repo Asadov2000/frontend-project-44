@@ -1,5 +1,11 @@
 #!/usr/bin/env node
-import progression from '../src/games/progression.js';
-import gameSession from '../src/index.js';
 
-gameSession(progression);
+import getName from '../src/cli.js';
+import startGame from '../src/games/index.js';
+
+// Init player
+const name = getName();
+// Init game by name
+const game = startGame('progression');
+// Start game
+game(name);
