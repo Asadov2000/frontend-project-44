@@ -1,5 +1,11 @@
 #!/usr/bin/env node
-import prime from '../src/games/prime.js';
-import gameSession from '../src/index.js';
 
-gameSession(prime);
+import getName from '../src/cli.js';
+import startGame from '../src/games/index.js';
+
+// Init player
+const name = getName();
+// Init game by name
+const game = startGame('prime');
+// Start game
+game(name);
