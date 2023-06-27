@@ -1,5 +1,11 @@
 #!/usr/bin/env node
-import gcd from '../src/games/gcd.js';
-import gameSession from '../src/index.js';
 
-gameSession(gcd);
+import getName from '../src/cli.js';
+import startGame from '../src/games/index.js';
+
+// Init player
+const name = getName();
+// Init game by name
+const game = startGame('gcd');
+// Start game
+game(name);
