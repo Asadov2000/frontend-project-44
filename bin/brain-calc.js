@@ -1,5 +1,11 @@
 #!/usr/bin/env node
-import calc from '../src/games/calc.js';
-import gameSession from '../src/index.js';
 
-gameSession(calc);
+import getName from '../src/cli.js';
+import startGame from '../src/games/index.js';
+
+// Init player
+const name = getName();
+// Init game by name
+const game = startGame('calc');
+// Start game
+game(name);
